@@ -1,0 +1,3 @@
+sll.reverse()
+print( "after reversing: ")
+sll.traverse()
