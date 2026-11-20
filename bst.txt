@@ -5,6 +5,6 @@ all values to the right subtree >=parent
 each node has 0/1/2-max child nodes
 
 Traversal types:
-inorder: left->root->right
-postorder: left->right->root
-pre: root->left->right
+inorder:    left->root->right
+postorder:  left->right->root
+pre:        root->left->right
