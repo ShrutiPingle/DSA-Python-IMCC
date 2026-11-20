@@ -1,5 +1,5 @@
 Binary search tree:
-all values to the left subtree are < root
-all values to the right subtree >=root
+all values to the left subtree are < parent
+all values to the right subtree >=parent
 
 each node has 0/1/2-max child nodes
