@@ -75,7 +75,18 @@ class bst:
             self.postorder(root.right)
             print(root.data, end=" ")
 
-#findmax() , findmin() remaining
+    def search(self,key):
+        temp=self.root
+        while temp:
+            if temp.data==key:
+                return True
+            elif key<temp.data:
+                temp=temp.left
+            else:
+                temp=temp.right
+        return False
+
+#findmax() , findmin() -remaining
 
 
 tree = bst()
@@ -89,8 +100,8 @@ tree.insert(300)
 tree.insert(500)
 tree.insert(50)
 
-print("inorder traversal:")
-tree.inorder(tree.root)
+# print("inorder traversal:")
+# tree.inorder(tree.root)
 
 # print("\n\npreorder traversal:")
 # tree.preorder(tree.root)
@@ -98,17 +109,22 @@ tree.inorder(tree.root)
 # print("\n\npostorder traversal:")
 # tree.postorder(tree.root)
 
-tree.root = tree.del_node(tree.root, 4)
+# tree.root = tree.del_node(tree.root, 4)
 
-print("\n\ninorder after deletion:")
-tree.inorder(tree.root)
+# print("\n\ninorder after deletion:")
+# tree.inorder(tree.root)
 
-tree.root = tree.del_node(tree.root, 65)
+# tree.root = tree.del_node(tree.root, 65)
 
-print("\n\ninorder after deletion:")
-tree.inorder(tree.root)
+# print("\n\ninorder after deletion:")
+# tree.inorder(tree.root)
 
-tree.root = tree.del_node(tree.root, 100)
+# tree.root = tree.del_node(tree.root, 100)
 
-print("\n\ninorder after deletion:")
-tree.inorder(tree.root)
+# print("\n\ninorder after deletion:")
+# tree.inorder(tree.root)
+
+if tree.search(55):
+    print("node found")
+else:
+    print("node not found")
