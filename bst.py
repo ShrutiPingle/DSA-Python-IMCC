@@ -8,6 +8,7 @@ class node:
 class bst:
     def __init__(self):
         self.root = None
+        self.cnt=0
 
     def insert(self, data):
         self.root = self.insert_node(self.root, data)
@@ -86,6 +87,15 @@ class bst:
                 temp=temp.right
         return False
 
+    def cnt_leafNodes(self,rt):
+        if rt is None:
+            return
+        else:
+            self.cnt_leafNodes(rt.left)
+            if rt.left is None and rt.right is None:
+                self.cnt+=1
+            self.cnt_leafNodes(rt.right)
+
 #findmax() , findmin() -remaining
 
 
@@ -102,6 +112,7 @@ tree.insert(50)
 
 # print("inorder traversal:")
 # tree.inorder(tree.root)
+print("total leaf nodes:",tree.cnt_leafNodes(tree.root))
 
 # print("\n\npreorder traversal:")
 # tree.preorder(tree.root)
@@ -124,7 +135,7 @@ tree.insert(50)
 # print("\n\ninorder after deletion:")
 # tree.inorder(tree.root)
 
-if tree.search(55):
-    print("node found")
-else:
-    print("node not found")
+# if tree.search(55):
+#     print("\nnode found")
+# else:
+#     print("\nnode not found")
