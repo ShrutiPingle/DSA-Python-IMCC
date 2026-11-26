@@ -96,6 +96,21 @@ class bst:
                 self.cnt+=1
             self.cnt_leafNodes(rt.right)
 
+    def level_order(self,rt):
+        if rt is None:
+            print("BST is empty")
+        arr=[]
+        cnt=0
+        arr.append(rt)
+        while(cnt<len(arr)):
+            temp=arr[cnt]
+            cnt+=1
+            print(temp.data,end="")
+            if temp.left:
+                arr.append(temp.left)
+            if temp.right:
+                arr.append(temp.right)
+
 #findmax() , findmin() -remaining
 
 
