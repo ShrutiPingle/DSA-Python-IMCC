@@ -101,56 +101,62 @@ class bst:
             print("BST is empty")
         arr=[]
         cnt=0
+        level=0
         arr.append(rt)
         while(cnt<len(arr)):
-            temp=arr[cnt]
-            cnt+=1
-            print(temp.data,end="")
-            if temp.left:
-                arr.append(temp.left)
-            if temp.right:
-                arr.append(temp.right)
-
+            node_cnt=len(arr)-cnt           #no.of nodes on the current level
+            print("level:",level,"=", end=" ")
+            for i in range(node_cnt):
+                temp=arr[cnt]
+                cnt+=1
+                print(temp.data,end=" ") #visiting node
+                if temp.left:
+                    arr.append(temp.left)
+                if temp.right:
+                    arr.append(temp.right)
+            level+=1
 #findmax() , findmin() -remaining
 
 
-tree = bst()
+bst = bst()
 
-tree.insert(100)
-tree.insert(10)
-tree.insert(450)
-tree.insert(4)
-tree.insert(65)
-tree.insert(300)
-tree.insert(500)
-tree.insert(50)
+bst.insert(100)
+bst.insert(10)
+bst.insert(450)
+bst.insert(4)
+bst.insert(65)
+bst.insert(300)
+bst.insert(500)
+bst.insert(50)
 
 # print("inorder traversal:")
-# tree.inorder(tree.root)
-print("total leaf nodes:",tree.cnt_leafNodes(tree.root))
+# bst.inorder(bst.root)
+# print("total leaf nodes:",bst.cnt_leafNodes(bst.root))
 
 # print("\n\npreorder traversal:")
-# tree.preorder(tree.root)
+# bst.preorder(bst.root)
 
 # print("\n\npostorder traversal:")
-# tree.postorder(tree.root)
+# bst.postorder(bst.root)
 
-# tree.root = tree.del_node(tree.root, 4)
-
-# print("\n\ninorder after deletion:")
-# tree.inorder(tree.root)
-
-# tree.root = tree.del_node(tree.root, 65)
+# bst.root = bst.del_node(bst.root, 4)
 
 # print("\n\ninorder after deletion:")
-# tree.inorder(tree.root)
+# bst.inorder(bst.root)
 
-# tree.root = tree.del_node(tree.root, 100)
+# bst.root = bst.del_node(bst.root, 65)
 
 # print("\n\ninorder after deletion:")
-# tree.inorder(tree.root)
+# bst.inorder(bst.root)
 
-# if tree.search(55):
+# bst.root = bst.del_node(bst.root, 100)
+
+# print("\n\ninorder after deletion:")
+# bst.inorder(bst.root)
+
+# if bst.search(55):
 #     print("\nnode found")
 # else:
 #     print("\nnode not found")
+
+bst.level_order(bst.root)
