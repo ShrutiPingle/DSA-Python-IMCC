@@ -108,7 +108,7 @@ class bst:
             print("level:",level,"=", end=" ")
             for i in range(node_cnt):
                 temp=arr[cnt]
-                cnt+=1
+                cnt+=1 # no.of nodes visited
                 print(temp.data,end=" ") #visiting node
                 if temp.left:
                     arr.append(temp.left)
