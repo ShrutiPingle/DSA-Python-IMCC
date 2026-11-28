@@ -7,7 +7,7 @@ class node:
 
 class Queue:
   def __init__(self):
-    self.front==self.rear=None
+    self.front==None
 
   def enqueue(self,new_node):
     if self.front is None or new_node.priority<self.front.priority:
@@ -15,17 +15,36 @@ class Queue:
       self.front=new_node
       return
     temp=self.front
-    while temp.next is not None and temp.priority!<=new_node.priority:
+    while temp.next is not None and temp.priority<=new_node.priority:
       temp=temp.next
     new_node.next=temp.next
     temp.next=new_node
 
   def dequeue(self):
-    pass
+    temp=self.front
+    self.front=self.front.next
+    print(f"Paitent dequeud:{temp.pname} | id:{temp.pid}")
+    temp=None
 
   def display_next(self):
     if self.front is None:
       print("no paitent in queue")
       return
-    print(f"Next paitent is :{self.front.pname}")
+    print(f"Next paitent is : {self.front.pname} | id:{temp.pid}")
+
+  def display_all(self):
+    temp=self.front
+    if self.front is None:
+      print("queue is empty")
+      return
+    while temp:
+      print(f"priority:{temp.priority} | paitent name: {self.front.pname} | id:{temp.pid}", end="\n")
+      temp=temp.next
+
+q1=Queue()
+q1.enqueue(node(101,"ashutosh",2))
+q1.enqueue(node(102,"kaivalya",1))
+q1.enqueue(node(103,"minal",3))
+q1.enqueue(node(104,"anna",1))
       
+q1.display_all()
